@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>請求書作成フォーム</title>
+    <style>
+        input::placeholder {
+            color: #999999; /* placeholderの色を薄いグレーに設定 */
+        }
+    </style>
+</head>
+<body>
+    <h1>請求書作成フォーム</h1>
+    <form id="invoiceForm">
+        <label for="customerName">宛名（請求先）:</label>
+        <input type="text" id="customerName" name="customerName" placeholder="株式会社○○" required><br>
+        <label for="issuerName">発行者名:</label>
+        <input type="text" id="issuerName" name="issuerName" placeholder="例: 山田太郎" required><br>
+        <label for="issuerAddress">発行者の住所:</label>
+        <input type="text" id="issuerAddress" name="issuerAddress" placeholder="例: 東京都新宿区1-1-1" required><br>
+        <label for="issuerPhone">発行者の電話番号:</label>
+        <input type="text" id="issuerPhone" name="issuerPhone" placeholder="例: 03-1234-5678" required><br>
+        <label for="invoiceDate">請求日:</label>
+        <input type="date" id="invoiceDate" name="invoiceDate" required><br>
+        <label for="transactionDate">取引年月日:</label>
+        <input type="date" id="transactionDate" name="transactionDate" required><br>
+        <label for="subtotal">小計:</label>
+        <input type="number" id="subtotal" name="subtotal" placeholder="例: 100000" required><br>
+        <label for="tax">消費税:</label>
+        <input type="number" id="tax" name="tax" placeholder="例: 10000" required><br>
+        <label for="totalAmount">合計金額:</label>
+        <input type="number" id="totalAmount" name="totalAmount" placeholder="例: 110000" required><br>
+        <label for="dueDate">振込期日:</label>
+        <input type="date" id="dueDate" name="dueDate" required><br>
+        <label for="bankDetails">振込先:</label>
+        <input type="text" id="bankDetails" name="bankDetails" placeholder="例: 三菱UFJ銀行 新宿支店 普通 1234567" required><br>
+        <label for="invoiceNumber">請求書番号:</label>
+        <input type="text" id="invoiceNumber" name="invoiceNumber" placeholder="例: 20230101" required><br>
+        <label for="email">メールアドレス:</label>
+        <input type="email" id="email" name="email" placeholder="例: example@example.com" required><br>
+        <button type="submit">送信</button>
+    </form>
+
+    <a id="downloadLink" href="#" style="display:none;">請求書をダウンロード</a>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

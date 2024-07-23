@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>請求書</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>請求書 # {{invoiceNumber}}</h1>
+    <p>請求日: {{invoiceDate}}<br>
+       取引年月日: {{transactionDate}}<br>
+       支払期限: {{dueDate}}</p>
+    <p>発行者名: {{issuerName}}<br>
+       発行者の住所: {{issuerAddress}}<br>
+       発行者の電話番号: {{issuerPhone}}</p>
+    <p>宛名（請求先）: {{customerName}}</p>
+    <table>
+        <tr>
+            <th>摘要</th>
+            <th>数量</th>
+            <th>単価</th>
+            <th>金額</th>
+            <th>消費税</th>
+        </tr>
+        <tr>
+            <td>当社製品</td>
+            <td>4</td>
+            <td>38,000</td>
+            <td>152,000</td>
+            <td>15,200 (10%)</td>
+        </tr>
+        <tr>
+            <td>当社サービス</td>
+            <td>1</td>
+            <td>74,000</td>
+            <td>74,000</td>
+            <td>7,400 (10%)</td>
+        </tr>
+    </table>
+    <p>小計: {{subtotal}} 円<br>
+       消費税: {{tax}} 円<br>
+       合計金額: {{totalAmount}} 円</p>
+    <p>振込先: {{bankDetails}}<br>
+       請求書番号: {{invoiceNumber}}</p>
+</body>
+</html>
