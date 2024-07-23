@@ -1,19 +1,17 @@
 {
   "name": "invoice",
   "version": "1.0.0",
-  "main": "script.js",
+  "description": "A sample invoice application",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "dependencies": {
-    "body-parser": "^1.20.2",
-    "express": "^4.19.2",
-    "fontkit": "^2.0.2",
-    "nodemailer": "^6.9.14",
-    "pdf-lib": "^1.17.1"
+    "express": "^4.17.1",
+    "pdf-lib": "^1.16.0",
+    "body-parser": "^1.19.0",
+    "path": "^0.12.7",
+    "util": "^0.12.4",
+    "fontkit": "^2.0.2"
   }
 }
