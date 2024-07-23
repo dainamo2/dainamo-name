@@ -12,6 +12,11 @@ const app = express();
 app.use(bodyParser.json());
 app.use(express.static(__dirname)); // サーバーが静的ファイルを提供するように設定
 
+// デバッグ用のシンプルなルートを追加
+app.get('/', (req, res) => {
+    res.send('Hello World');
+});
+
 app.post('/create-invoice', async (req, res) => {
     const {
         customerName, issuerName, issuerAddress, issuerPhone, invoiceDate,
@@ -22,7 +27,7 @@ app.post('/create-invoice', async (req, res) => {
     try {
         const pdfDoc = await PDFDocument.create();
         pdfDoc.registerFontkit(fontkit);
-        const fontBytes = await readFile(path.join(__dirname, 'fonts', 'NotoSansJP-Regular.ttf'));
+        const fontBytes = await readFile(path.join(__dirname, 'fonts', 'NotoSansJP-Regular.otf'));
         const customFont = await pdfDoc.embedFont(fontBytes);
         const page = pdfDoc.addPage([600, 800]);
         const { width, height } = page.getSize();
@@ -59,3 +64,4 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
+
