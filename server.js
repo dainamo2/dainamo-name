@@ -61,7 +61,7 @@ app.post('/create-invoice', async (req, res) => {
 app.use('/invoices', express.static(path.join(__dirname, 'invoices')));
 
 const PORT = process.env.PORT || 3000;
+console.log(`Starting server on port ${PORT}`);
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
-
